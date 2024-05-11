@@ -1,0 +1,20 @@
+---
+- name: Playbook to start the homework role
+  hosts: localhost
+  become: true
+  vars_prompt:
+
+  - name: username
+    prompt: "Enter username for server: "
+    private: false
+
+  - name: appname
+    prompt: "Enter appname: "
+    private: false
+
+  - name: url
+    prompt: "Enter package url: "
+    private: false
+
+  roles:
+    - tgsl_task
